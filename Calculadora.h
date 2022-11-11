@@ -44,7 +44,10 @@ double Calculadora::multiplicacao(){
 }
 
 double Calculadora::divisao(){
-    return (a/b);
+    if (b == 0){
+        throw 1;
+    }
+    return (a/b);   
 }
 
 #endif

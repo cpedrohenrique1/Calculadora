@@ -28,9 +28,8 @@ void TestaCalculadora::menu(){
                 cout << "2 - Subtracao\n";
                 cout << "3 - Multiplicacao\n";
                 cout << "4 - Divisao\n";
-                cout << "5 - Encerrar programa\n";
                 cin >> alt;
-            }while(alt <1 || alt>5);
+            }while(alt <1 || alt>4);
             switch(alt){
                 case 1:
                     result = Objeto.soma();
@@ -42,21 +41,13 @@ void TestaCalculadora::menu(){
                     result = Objeto.multiplicacao();
                     break;
                 case 4:
-                    if (Objeto.getB() == 0){
-                        throw 1;
-                    }
                     result = Objeto.divisao();
                     break;
-                case 5:
-                    cout << "Tem certeza que deseja encerrar?\n";
-                    throw 2;
             }
             cout << "Resultado: " << result << "\n";
         }
         catch (int erro){
-            if (erro == 1){
-                cout << "Erro: Divisao por zero\n";
-            }
+            cout << "Erro: Divisao por zero\n";
         }
         cout << "Insira 0 para encerrar\n";
         cin >> flag;
